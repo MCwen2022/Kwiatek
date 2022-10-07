@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@600&display=swap');
+        body{
+            background-color: #18181a;
+            font-family: 'Maven Pro', sans-serif;
+        }
+        button{
+            transform: skewX(-30deg);
+            border: 0;
+            margin: 5px;
+            padding: 8px 15px;
+        }
+        button span{
+            display: block;
+            font-size: 16px;
+            color: #18181a;
+            transform: skewX(30deg);
+            font-family: 'Maven Pro', sans-serif;
+        }
+        h2{
+            color: #dcdcee;
+        }
+        p{
+            color: #dcdcee;
+        }
+    </style>
+</head>
+<body>
+    <h2>Wybierz kwiatka:</h2>
+    <button value="mediumspringgreen"><span>Zielony</span></button>
+    <button value="cornflowerblue"><span>Niebieski</span></button>
+    <button value="goldenrod"><span>Żółty</span></button>
+    <button value="crimson"><span>Czerwony</span></button>
+    <div>
+        <img>
+    </div>
+    <p></p>
+</body>
+    <script>
+        const img = document.querySelector("img");
+        const button = document.querySelectorAll("button");
+        const p = document.querySelector("p");
+
+        for(let i = 0; i<button.length; i++){
+
+            button[i].addEventListener('click', function(){
+                img.setAttribute("src", button[i].value+"_flower.png")
+                p.innerHTML = "Kolor twojego kwiatka to: "+button[i].innerHTML;
+                
+            });
+
+            button[i].style.backgroundColor = button[i].value;  
+        }
+              
+    </script>
+</html>
